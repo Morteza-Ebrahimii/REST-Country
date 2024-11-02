@@ -1,4 +1,7 @@
+import { Routes, Route } from 'react-router-dom'
 import './app.css'
+import AllCountries from './Component/AllCountries'
+import CountryInfo from './Component/CountryInfo'
 
 function App() {
 
@@ -10,6 +13,10 @@ function App() {
         </div>
       </header>
       <div className="container">
+        <Routes>
+          <Route index element={<AllCountries />}></Route>
+          <Route path='/country/:countryName' element={<CountryInfo />}></Route>
+        </Routes>
       </div>
     </>
   )
