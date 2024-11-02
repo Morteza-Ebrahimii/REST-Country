@@ -78,3 +78,19 @@ body {
   font-weight: 300;
   opacity: 80%;
 }
+
+.country__buttom h4 {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+input{
+  padding: 10px 25px;
+  color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  background: hsl(209, 23%, 22%);
+  border: none;
+  outline: none;
+  margin-bottom: 50px;
+}
