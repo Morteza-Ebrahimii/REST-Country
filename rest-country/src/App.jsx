@@ -1,7 +1,8 @@
-import { Routes, Route } from 'react-router-dom'
 import './app.css'
-import AllCountries from './Component/AllCountries'
-import CountryInfo from './Component/CountryInfo'
+import { Routes, Route } from 'react-router-dom'
+import AllCountries from './pages/AllCountries'
+import CountryInfo from './pages/CountryInfo.jsx';
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"></link>
 
 function App() {
 

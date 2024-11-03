@@ -1,6 +1,6 @@
-import React,{useState} from "react"
+import React, { useState } from "react"
 
-function SearchInput({onSearch}){
+function SearchInput({ onSearch }) {
 
     const [input, setInput] = useState('')
 
@@ -9,10 +9,15 @@ function SearchInput({onSearch}){
         onSearch(input)
     }
 
-    return(
+    return (
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Search a country..."  value={input}
-             onChange={(e) => setInput(e.target.value)}/>
+            <div className="input-icon position-relative">
+                {input === '' && <i className="bi bi-search position-absolute "></i>}
+
+                <input type="text" placeholder="Search for a country..." value={input}
+                    onChange={(e) => setInput(e.target.value)} />
+
+            </div>
         </form>
     )
 }

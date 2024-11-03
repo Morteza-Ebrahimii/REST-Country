@@ -11,7 +11,7 @@ function Country({country}){
 
                         <div className="country__data">
                             <h3>{country.name}</h3>
-                            <h6>Populatoin: {country.population}</h6>
+                            <h6>Populatoin: <span>{new Intl.NumberFormat().format(country.population)}</span></h6>
                             <h6>Region: {country.region}</h6>
                             <h6>Capital: {country.capital}</h6>
                         </div>

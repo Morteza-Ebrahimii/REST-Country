@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Country from './Country'
-import SearchInput from "./SearchInput";
+import Country from '../Component/Country'
+import SearchInput from "../Component/SearchInput";
 import Container from 'react-bootstrap/Container';
+import FilterCountry from "../Component/FilterCountry";
+import {Link} from 'react-router-dom'
 
 function AllCountries() {
 
@@ -28,10 +30,6 @@ function AllCountries() {
         }
     }
 
-    useEffect(() => {
-        getAllCountries()
-    }, [])
-
     const getCountryByName = async (countryName) => {
         try {
             const res = await fetch('/data.json')
@@ -54,6 +52,32 @@ function AllCountries() {
 
     }
 
+    const getCountryByRegion = async(regionName) => {
+        try {
+            const res = await fetch('/data.json')
+            if (!res.ok) throw new Error('failed....!')
+
+            const data = await res.json()
+
+            const filteredCountries = data.filter(country =>
+                country.region.toLowerCase().includes(regionName.toLowerCase())
+            );
+            setCountries(filteredCountries)
+            setIsLoading(false)
+
+
+
+        } catch (error) {
+            setIsLoading(false)
+            setError(error.message)
+        }
+    }
+
+    useEffect(() => {
+        getAllCountries()
+    }, [])
+
+
     return (
         <Container className="all__country__wrapper">
             <div className="country__top">
@@ -61,7 +85,9 @@ function AllCountries() {
                     className="search">
                     <SearchInput onSearch={getCountryByName} />
                 </div>
-
+                <div className="filter">
+                    < FilterCountry onSelect={getCountryByRegion} />
+                </div>
             </div>
 
             <div className="country__buttom">
@@ -69,9 +95,9 @@ function AllCountries() {
                 {error && !isLoading && <h4>{error}</h4>}
 
                 {countries?.map(country => (
-
-                    <Country country={country} key={country.name} />
-
+                   <Link to={`/country/${country.name}`} key={country.name}>
+                    <Country country={country}  />
+                   </Link>
                 ))}
             </div>
         </Container>
