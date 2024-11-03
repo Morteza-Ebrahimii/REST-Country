@@ -85,7 +85,7 @@ body {
   margin-top: 15px;
   font-size: 1.5rem;
 }
-input{
+input {
   padding: 10px 25px;
   color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -93,4 +93,11 @@ input{
   border: none;
   outline: none;
   margin-bottom: 50px;
+  width: 30em;
+height: 4em;
+}
+.country__top {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8em;
 }

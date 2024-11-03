@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Country from './Country'
 import SearchInput from "./SearchInput";
+import Container from 'react-bootstrap/Container';
 
 function AllCountries() {
 
@@ -44,7 +45,7 @@ function AllCountries() {
             setCountries(filteredCountries)
             setIsLoading(false)
 
-          
+
 
         } catch (error) {
             setIsLoading(false)
@@ -54,11 +55,13 @@ function AllCountries() {
     }
 
     return (
-        <div className="all__country__wrapper">
+        <Container className="all__country__wrapper">
             <div className="country__top">
-                <div className="search">
+                <div
+                    className="search">
                     <SearchInput onSearch={getCountryByName} />
                 </div>
+
             </div>
 
             <div className="country__buttom">
@@ -71,7 +74,7 @@ function AllCountries() {
 
                 ))}
             </div>
-        </div>
+        </Container>
     )
 }
 export default AllCountries
