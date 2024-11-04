@@ -3,7 +3,8 @@ import Country from '../Component/Country'
 import SearchInput from "../Component/SearchInput";
 import Container from 'react-bootstrap/Container';
 import FilterCountry from "../Component/FilterCountry";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Row, Col } from 'react-bootstrap'
 
 function AllCountries() {
 
@@ -52,7 +53,7 @@ function AllCountries() {
 
     }
 
-    const getCountryByRegion = async(regionName) => {
+    const getCountryByRegion = async (regionName) => {
         try {
             const res = await fetch('/data.json')
             if (!res.ok) throw new Error('failed....!')
@@ -95,9 +96,13 @@ function AllCountries() {
                 {error && !isLoading && <h4>{error}</h4>}
 
                 {countries?.map(country => (
-                   <Link to={`/country/${country.name}`} key={country.name}>
-                    <Country country={country}  />
-                   </Link>
+                    <Link to={`/country/${country.name}`} key={country.name}>
+                        <Row>
+                            <Col>
+                                <Country country={country} />
+                            </Col>
+                        </Row>
+                    </Link>
                 ))}
             </div>
         </Container>

@@ -8,34 +8,18 @@
 }
 
 .container {
-  padding: 0ex 15px;
+  padding: 0ex 1px;
   margin: auto;
-}
-
-body {
-  background: hsl(207, 26%, 17%);
-}
-
-.header {
-  width: 100%;
-  height: 70px;
-  line-height: 70px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: hsl(209, 23%, 22%);
-  z-index: 99;
 }
 
 .header h5 {
-  width: 1140px;
+  /* width: 1140px; */
   padding: 0ex 15px;
-  margin: auto;
+  /* margin: auto; */
   margin-top: 1em;
   display: flex;
   align-items: center;
   font-style: 14px;
-  color: hsl(0, 0%, 100%);
 }
 
 .country__buttom {
@@ -62,7 +46,7 @@ body {
 }
 
 .all__country__wrapper {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .country__data {
@@ -104,11 +88,32 @@ input {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin: 0 3em;
+  /* margin: 0 3em; */
 }
 .input-icon {
   left: 10px;
   top: 50%;
+}
+.input-icon input {
+  background-color: var(--white);
+}
+.input-icon i {
+  color: var(--very-dark-blue-text);
+}
+.App.dark .input-icon input {
+  background-color: var(--white);
+}
+.App.dark .input-icon i {
+  color: var(--white);
+}
+.input-icon input::placeholder {
+  color: var(--very-dark-blue-text);
+}
+.App.dark .input-icon input::placeholder {
+  color: var(--white);
+}
+.App.dark .input-icon input {
+  background-color: var(--dark-blue);
 }
 .bi-search {
   color: hsl(0, 0%, 100%);
@@ -121,14 +126,16 @@ input::placeholder {
 }
 select {
   padding: 18px 30px;
-  background: hsl(209, 23%, 22%);
   border: none;
   outline: none;
   border-radius: 5px;
-  color: hsl(0, 0%, 100%);
+}
+.App.dark select {
+  color: var(--white);
+  background: var(--dark-blue);
 }
 .country__info__wrapper {
-  margin-top: 120px;
+  margin-top: 60px;
 }
 .country__info__container {
   display: flex;
@@ -138,31 +145,43 @@ select {
 .country__info {
   width: 50%;
 }
-.country__info__img img{
-width: 29rem;
-height: 18rem;
+.country__info__img img {
+  width: 29rem;
+  height: 18rem;
 }
 .back-button {
   padding: 10px 25px;
-  background: hsl(209, 23%, 22%);
   border: none;
   outline: none;
   cursor: pointer;
   width: 120px;
   border-radius: 5px;
   margin-bottom: 50px;
+  background-color: var(--white);
+  box-shadow: 1px 1px 6px var(--very-dark-blue-bg);
+}
+.App.dark .back-button {
+  background: var(--dark-blue);
+  box-shadow: 1px 1px 6px var(--very-dark-blue-bg);
+
+}
+.back-button a {
+color: var(--very-dark-blue-text);
+}
+.App.dark .back-button a {
+color: var(--white);
 }
 a {
   text-decoration: none;
-  color: hsl(0, 0%, 100%);
+  color: var(--very-dark-blue-text);
 }
-.country__info h3 {
-  color: hsl(0, 0%, 100%);
-  font-size: 1.3rem;
-  margin-bottom: 30px;
-}
+/* .country__info h5 {
+    color: var(--very-light-gray);
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+  } */
 .country__info-left h5 {
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
   font-size: 0.9rem;
   font-weight: 300;
   margin-bottom: 10px;
@@ -173,3 +192,160 @@ a {
   font-weight: 300;
 }
 
+/* src/app.css */
+
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue-bg: hsl(207, 26%, 17%);
+  --very-dark-blue-text: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--very-light-gray); /* Default light mode background */
+  color: var(--very-dark-blue-text); /* Default light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+  /* background: hsl(207, 26%, 17%); */
+}
+
+.App.dark {
+  background-color: var(--very-dark-blue-bg); /* Dark mode background */
+  color: var(--white); /* Dark mode text color */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App.dark .header {
+  background-color: var(--dark-blue);
+}
+
+/* Button Styles */
+.theme-toggle {
+  background-color: var(--white); 
+  border: none; 
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.App.dark .theme-toggle {
+  background-color: var(--dark-blue);
+  color: var(--white); /* Dark mode text color */
+  border:none; /* Border color for dark mode */
+}
+
+
+/* Additional styles for other components can go here */
+
+/* src/app.css */
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--very-light-gray); /* Default light mode background */
+  color: var(--very-dark-blue-text); /* Default light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.App.dark {
+  background-color: var(--very-dark-blue-bg); /* Dark mode background */
+  color: var(--white); /* Dark mode text color */
+}
+.App {
+  background-color: var(--very-light-gray); /* Dark mode background */
+  color: var(--dark-blue); /* Dark mode text color */
+}
+
+/* Country Card Styles */
+.country__cart {
+  width: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  background: var(--dark-blue); /* Default background */
+  color: var(--white); /* Default text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.App.dark .country__cart {
+  background: var(--dark-blue); /* Dark mode background */
+  color: var(--white); /* Dark mode text color */
+}
+
+/* Country Info Styles */
+.country__info__container {
+  display: flex;
+  column-gap: 3rem;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.App.dark .country__info__container {
+  color: var(--white); /* Dark mode text color */
+}
+
+/* Additional styles for other components can go here */
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App.dark .header h5 {
+  color: var(--very-light-gray);
+}
+
+.country__info-left h5 {
+  color: var(--very-dark-blue-text);
+}
+.App.dark .country__info-left h5 {
+  color: var(--white);
+}
+.country__info-left h5 span {
+  color: var(--very-dark-blue-text);
+}
+.App.dark .country__info-left h5 span {
+  color: var(--white);
+}
+
+.country__cart {
+  background-color: var(--white);
+}
+.App.dark .country__cart {
+  background-color: var(--dark-blue);
+}
+
+.country__data h3 {
+  color: var(--very-dark-blue-text);
+}
+.App.dark .country__data h3 {
+  color: var(--white);
+}
+.country__data h6 {
+  /* font-weight: 600; */
+  color: var(--very-dark-blue-text);
+}
+.App.dark .country__data h6 {
+  color: var(--white);
+}
+
+.country__data h6 span * {
+  color: var(--very-dark-blue-text);
+}
+.App.dark .country__data h6 span * {
+  color: var(--very-light-gray);
+}
