@@ -1,4 +1,3 @@
-// src/Component/ThemeToggle.jsx
 import React from 'react';
 
 const ThemeToggle = ({ toggleTheme, darkMode }) => {

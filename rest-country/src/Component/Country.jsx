@@ -1,4 +1,3 @@
-// src/Component/Country.jsx
 function Country({ country }) {
     return (
         <div className="country__cart">

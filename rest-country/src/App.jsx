@@ -1,4 +1,3 @@
-// src/App.jsx
 import './app.css';
 import { Routes, Route } from 'react-router-dom';
 import AllCountries from './Pages/AllCountries.jsx';
@@ -28,7 +27,7 @@ function App() {
     <div className={darkMode ? 'App dark' : 'App'}>
       <header className="header">
         <div className="container container-header">
-          <h5 style={{ display: 'inline' }}>Where in the world</h5>
+          <h5>Where in the world?</h5>
           <ThemeToggle toggleTheme={toggleTheme} darkMode={darkMode} />
         </div>
       </header>
